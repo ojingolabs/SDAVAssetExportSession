@@ -125,6 +125,7 @@
         //
         self.videoInput = [AVAssetWriterInput assetWriterInputWithMediaType:AVMediaTypeVideo outputSettings:self.videoSettings];
         self.videoInput.expectsMediaDataInRealTime = NO;
+        self.videoInput.performsMultiPassEncodingIfSupported = self.performsMultiPassEncodingIfSupported;
         if ([self.writer canAddInput:self.videoInput])
         {
             [self.writer addInput:self.videoInput];

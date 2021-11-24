@@ -145,6 +145,11 @@
 @property (nonatomic, assign, readonly) AVAssetExportSessionStatus status;
 
 /**
+ * The value for appropriate property of videoInput instance
+ */
+@property (nonatomic, assign) BOOL performsMultiPassEncodingIfSupported;
+
+/**
  * Returns an asset export session configured with a specified asset.
  *
  * @param asset The asset you want to export
