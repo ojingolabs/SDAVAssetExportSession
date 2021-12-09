@@ -23,7 +23,7 @@
  * limited set of Apple provided presets.
  *
  * After you have initialized an export session with the asset that contains the source media, video and audio
- * settings, and the output file type (outputFileType), you can start the export running by invoking 
+ * settings, and the output file type (outputFileType), you can start the export running by invoking
  * `exportAsynchronouslyWithCompletionHandler:`. Because the export is performed asynchronously, this method
  * returns immediately — you can observe progress to check on the progress.
  *
@@ -93,6 +93,15 @@
  * The dictionary’s keys are from <CoreVideo/CVPixelBuffer.h>.
  */
 @property (nonatomic, copy) NSDictionary *audioSettings;
+
+/**
+ * The settings used for decoding the audio track.
+ *
+ * A value of nil specifies that appended output should not be re-decoded.
+ * The dictionary’s keys are from <AVFoundation/AVVideoSettings.h>.
+ */
+
+@property (nonatomic, copy) NSDictionary *decompressionAudioSettings;
 
 /**
  * The time range to be exported from the source.
